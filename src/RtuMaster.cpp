@@ -99,7 +99,7 @@ void RtuMaster::task()
               if (!crcFrame)
               {
                 pmbFrame->len -= 2;
-                *(pmbFrame->buffer + 5) = (uint8_t) pmbFrame->len;
+                *(pmbFrame->buffer + 5) = (uint8_t) pmbFrame->len-6;
                 pmbFrame->status = cTcpSlave::frameStatus::readyToSendTcp;
               }
               else
