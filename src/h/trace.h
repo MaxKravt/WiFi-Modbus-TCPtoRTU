@@ -5,16 +5,19 @@
 #include <inttypes.h>
 #include "Stream.h"
 #include "Arduino.h"
+#include "init.h"
 #include <ESP8266WiFi.h>
 
 class cTcpTrace : public Stream
 {
   private:
   WiFiClient tcpTraceClient;
+  uint16_t menuState;
 
   public:
     void begin();
     void task(void);
+    void menu(void);
     virtual int available(void);
     virtual void flush(void);
     virtual int peek(void);
@@ -27,7 +30,6 @@ class cTcpTrace : public Stream
     inline size_t write(int n) { return write((uint8_t)n); }
     using Print::write; // pull in write(str) and write(buf, size) from Print
     operator bool() { return true; }
-
 };
 extern cTcpTrace trace;
 #endif

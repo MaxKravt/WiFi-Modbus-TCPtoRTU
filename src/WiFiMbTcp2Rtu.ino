@@ -1,10 +1,10 @@
 
 #include <ESP8266WiFi.h>
 
-#include "mbTCPslave.h"
-#include "RtuMaster.h"
-#include "trace.h"
-#include "init.h"
+#include "h\mbTCPslave.h"
+#include "h\RtuMaster.h"
+#include "h\trace.h"
+#include "h\init.h"
 
 #define SERIAL_BAUD        115200
 
@@ -18,7 +18,7 @@ void setup()
 }
 
 void loop() {
-  
+
   //trace.println("Cycl OK");
   TcpSlave.task();
   yield();

@@ -1,6 +1,6 @@
 
-#include "mbTCPslave.h"
-#include "trace.h"
+#include "..\h\mbTCPslave.h"
+#include "..\h\trace.h"
 WiFiServer mbServer(MODBUSIP_PORT);
 
 cTcpSlave::cTcpSlave()

@@ -1,5 +1,5 @@
-#include "RtuMaster.h"
-#include "trace.h"
+#include "..\h\RtuMaster.h"
+#include "..\h\trace.h"
 extern cTcpTrace trace;
 
 RtuMaster::RtuMaster()
